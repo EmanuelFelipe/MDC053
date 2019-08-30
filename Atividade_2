@@ -1,0 +1,32 @@
+a) -Entidades(código*, nome)
+-funcionario(matricula*, nome, salario)
+
+B) Pessoa (id*, nome, sexo, cpf, inscrição, cnpj)
+Endereço (id*, numero, logradouro, cep, uf, cidade)
+
+C) banco (cod. Banco*, nome)
+Agencia (cod.banco*, cod. Agencia*, nome)
+Empresta (cpf*, cod.agencia*, valor parcela, qtde parcelas, taxa juros)
+Cliente (cpf*, nome, dt nasc)
+
+D) produto (id produto*, nome)
+Fornecedor (id fornecedor*, nome)
+Fornece (id produto*, id fornecedor*, id consumidor*, data, qtde)
+Consumidor (id consumidor*, nome)
+
+E) aluno (matricula aluno*, nome)
+Turma (matricula aluno*, matricula professor*, numero*, sala)
+Professor (matricula professor*, nome, titulo)
+
+F) cliente (CPF*, nome)
+Financiamento (numero*, cpf*, data, valor, prazo)
+Veiculo (numero*, renovam*, valor, ano, num_eixos, carga_max, num_portas, tamanho)
+
+G) autor (email*, nome)
+Livro (email*, cnpj, isbn*, titulo)
+Exemplar(numero*, data_aquisicao)
+
+H) paciente (cpf*, nome)
+Telefone (cpf*, numtelefone)
+Consulta(cpf*, crm*, data)
+Medico(crm*, nome, especialidade)   
