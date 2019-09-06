@@ -1,0 +1,10 @@
+A) π nome ^ titulaçao (professor)
+B) π id_aluno, frequência, nota ( σid_periodo = ‘20042’ ^ id_turma = ‘1’ ^ id_disciplina = ‘MDC053(historico))
+C) π sala ( σ id_disciplina = ‘MDC053’ ^ id_periodo (turma))
+D)  π  id_aluno (   σ id_professor = ‘3056’ ^ id_periodo(histórico X turma))
+E)  π A.nome, D.nome( σ id_aluno = ‘199839550’ ^ nomeA ^  id_periodo ^ nomeD ^ frequência ^ nota(Aluno X Histórico X Disciplina)) 
+F)  π id_aluno - nota(  σ id_disciplina = ‘MDC053’ ( histórico))
+G)  π id_turma ( σ id_professor = ‘3056’ ^ id_aluno = ‘199839550’ ( turma X aluno))
+H) π id_disciplina – id_professor ( σ id_ professor = ‘3056’
+I) π id_aluno ∩ id_disciplina ( σ nome (aluno X histórico))
+J) pi id_aluno, id_disciplina( sigma frequência>= 75% ^ nota >= 5 (histórico) / pi id_disciplina (disciplina)
