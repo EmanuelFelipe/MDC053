@@ -1,0 +1,84 @@
+A) Projeto ( numero_empregado nome_empregado numero_depto nome_depto numero_gerente nome_gerente numero_projeto nome_projeto data_inicio_projeto horas_trabalhadas_projeto
+              1              Carlos          1          TI            2              Joao       1        Site telecom         05/05/2018                60
+              2              Arthur          2          RH            2              Joao       1        Site telecom         05/05/2018                40
+
+1FN
+Projeto ( numero_gerente nome_gerente numero_projeto nome_projeto data_inicio_projeto )
+            2          joao           1       Site telecom     05/05/2018
+
+Projeto_Empregado ( numero_empregado nome_empregado numero_depto nome_depto numero_projeto horas_trabalhadas_projeto )
+                     1               Carlos           1           TI           1                 60
+2 Arthur 2 TI 1 40
+
+2FN
+Projeto ( numero_gerente nome_gerente numero_projeto nome_projeto data_inicio_projeto )
+            2         Joao             1       Site telecom     05/05/2018
+
+Projeto_Empregado ( numero_empregado numero_projeto horas_trabalhadas_projeto )
+                     1                1                  60
+                     2                1                 40
+
+Empregado ( numero_empregado nome_empregado numero_depto nome_depto )
+             1             Carlos             1        TI
+             2             Arthur              2        RH
+
+3FN
+Projeto ( numero_gerente numero_projeto nome_projeto data_inicio_projeto )
+            2             1       Site telecom     01/01/2019
+
+Gerente ( numero_gerente nome_gerente )
+            2         Joao
+
+Projeto_Empregado ( numero_empregado numero_projeto horas_trabalhadas_projeto )
+                     1                1                  60
+                     2                1                  40
+
+Empregado ( numero_empregado nome_empregado numero_depto )
+             1             Carlos             1
+             2             Arthur             2
+
+Departamento ( numero_depto nome_depto )
+                  1         TI
+                  2           RH
+    -----------------------------------------------------------------------------------------------------------------------------------
+B) Pedido ( cod_pedido dat_emissao cod_fornecedor nom_fornecedor end_fornecedor cod_material dsc_material qtd_pedido vlr_unitario vl_total_material vlr_total_pedido)
+          23      20/02/2019     13         Amanda         aguas claras        167       madeira        3          15             45               45
+          15      01/02/2019     11         Fernando          guará           167       madeira        2        15               50               50
+
+F1
+Pedido ( cod_pedido dat_emissao cod_fornecedor nom_fornecedor end_fornecedor vlr_total_pedido )
+23  20/02/2019 13 Amanda aguas claras 45
+22 10/09/2019 44 Lucas Taguatinga 50
+
+Qnt pedido ( cod_pedido qtd_pedido )
+23 3
+15 2
+15 1
+
+Material ( cod_pedido cod_material dsc_material vlr_unitario vl_total_material )
+23 167 madeira 15 45
+15 167 madeira 15 50
+
+F2
+Pedido ( cod_pedido dat_emissao cod_fornecedor vlr_total_pedido )
+23 20/02/2019 13 45
+15 10/09/2019 11 50
+
+Fornecedor ( cod_fornecedor nom_fornecedor end_fornecedor )
+13 Amanda aguas claras
+44 Fernando guara
+
+Qnt pedido ( cod_pedido qtd_pedido )
+23 3
+15 2
+15 1
+
+Material ( cod_pedido cod_material dsc_material vlr_unitario vl_total_material )
+23  167 madeira 15 45                    
+22  167 madeira 15 50
+
+F3
+Pedido ( cod_pedido dat_emissao cod_fornecedor vlr_total_pedido )
+23 20/02/2019 13 45                      
+15 10/09/2019 11 50
+
