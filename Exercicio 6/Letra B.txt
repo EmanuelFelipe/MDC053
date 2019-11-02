@@ -1,0 +1,6 @@
+CREATE DATABASE letra_B;
+
+CREATE TABLE FORNECEDOR(cod_fornecedor INT NOT NULL AI PRIMARY KEY, nom_fornecedor VARCHAR(100) NOT NULL, end_fornecedor VARCHAR(100));
+CREATE TABLE PEDIDO(cod_pedido INT NOT NULL AI PRIMARY KEY, dat_emissao DATE NOT NULL, cod_fornecedor INT NOT NULL REFERENCES FORNECEDOR(cod_fornecedor), vlr_total_pedido DECIMAL(12,2) DEFAULT 0);
+CREATE TABLE MATERIAL(cod_material INT NOT NULL AI PRIMARY KEY, dsc_material VARCHAR(100) NOT NULL, vlr_unitario DECIMAL(12,2) NOT NULL);
+CREATE TABLE PEDIDO_MATERIAL(PRIMARY KEY(cod_pedido, cod_material), FOREIGN KEY(cod_pedido) REFERENCES pedido(cod_pedido), FOREIGN KEY(cod_material) REFERENCES material(cod_material), qtde_material SMALLINT NOT NULL CHECK > 0, vlr_material DECIMAL(12,2) NOT NULL);

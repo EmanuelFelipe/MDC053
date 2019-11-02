@@ -1,0 +1,7 @@
+create database exercicio_1;
+
+create table gerente(numero_gerente INT NOT NULL PRIMARY KEY,nome_gerente VARCHAR(100) NOT NULL);
+create table PROJETO(numero_projeto INT NOT NULL PRIMARY KEY, nome_projeto VARCHAR(100) NOT NULL, data_inicio_projeto DATE, numero_gerente INT NOT NULL REFERENCES gerente(numero_gerente));
+CREATE TABLE DEPARTAMENTO(numero_depto INT NOT NULL PRIMARY KEY, nome_depto VARCHAR(100) NOT NULL);
+CREATE TABLE EMPREGADO(numero_empregado INT NOT NULL PRIMARY KEY,nome_empregado VARCHAR(100) NOT NULL, numero_depto INT REFERENCES departamento(numero_depto));
+CREATE TABLE  PROJETO_EMPREGADO(numero_projeto INT NOT NULL, numero_empregado INT NOT NULL, PRIMARY KEY(numero_projeto, numero_empregado), FOREIGN KEY(numero_projeto) REFERENCES projeto(numero_projeto), FOREIGN KEY(numero_empregado) REFERENCES empregado(numero_empregado), horas_trabalhadas_projeto SMALLINT DEFAULT 0);
